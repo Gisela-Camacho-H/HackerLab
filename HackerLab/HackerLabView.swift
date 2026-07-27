@@ -34,11 +34,11 @@ struct HackerLabView: View {
                         .font(.system(size: 22, weight: .black, design: .monospaced))
                         .foregroundColor(color)
                         .multilineTextAlignment(.center)
-                        .shadow(color: color.opacity(0.8), radius: 8)
+                        .shadow(color: .hackerGreen.opacity(0.8), radius: 8)
                     
                     Text("ESTADO: REGISTRO ACTIVO")
                         .font(.system(.callout, design: .monospaced))
-                        .foregroundColor(color.opacity(0.7))
+                        .foregroundColor(.hackerGreen.opacity(0.7))
                 }
                 .padding(.top, 20)
                 
@@ -163,18 +163,21 @@ struct BadgeAvatarView: View {
             if UIImage(systemName: imageName) != nil {
                 Image(systemName: imageName)
                     .resizable()
+                    .symbolRenderingMode(.multicolor)
                     .scaledToFit()
                     .padding(25)
                     .foregroundColor(.white)
             
             } else if UIImage(named: imageName) != nil {
                 Image(imageName)
+                    .renderingMode(.original)
                     .resizable()
                     .scaledToFill()
             
             } else {
                 Image(systemName: "person.fill.badge.key")
                     .resizable()
+                    .symbolRenderingMode(.multicolor)
                     .scaledToFit()
                     .padding(25)
                     .foregroundColor(.white)
