@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Pitch Black Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0a0f0a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowYellow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Neon Gradients -->
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff500"/>
+      <stop offset="100%" stop-color="#ffaa00"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff85"/>
+      <stop offset="100%" stop-color="#00b359"/>
+    </linearGradient>
+
+    <linearGradient id="metalHead" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a241e"/>
+      <stop offset="100%" stop-color="#0b120e"/>
+    </linearGradient>
+
+    <!-- LED Screen Pattern -->
+    <pattern id="pixelGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="7" height="7" fill="#030805" rx="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Dark Pitch Black Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Background Cyber Circuit Grid -->
+  <g stroke="#00ff85" stroke-opacity="0.12" stroke-width="2" fill="none">
+    <circle cx="256" cy="256" r="220" stroke-dasharray="8,6"/>
+    <path d="M 100,100 L 160,100 L 190,130 M 412,100 L 352,100 L 322,130 M 100,412 L 170,412 L 200,382 M 412,412 L 342,412 L 312,382"/>
+    <circle cx="100" cy="100" r="4" fill="#00ff85"/>
+    <circle cx="412" cy="100" r="4" fill="#fff500"/>
+    <circle cx="100" cy="412" r="4" fill="#fff500"/>
+    <circle cx="412" cy="412" r="4" fill="#00ff85"/>
+  </g>
+
+  <!-- Antenna Base & Bolt Head -->
+  <g id="antenna">
+    <rect x="246" y="70" width="20" height="50" fill="#121a14" stroke="#00ff85" stroke-width="2" rx="4"/>
+    <path d="M 256,40 L 240,70 L 254,70 L 244,95 L 270,60 L 256,60 Z" fill="url(#yellowGrad)" filter="url(#glowYellow)"/>
+    <circle cx="256" cy="35" r="16" fill="none" stroke="#fff500" stroke-width="2.5" stroke-dasharray="4,4" filter="url(#glowYellow)"/>
+  </g>
+
+  <!-- Robot Ears / Side Connectors -->
+  <g id="ears">
+    <!-- Left Ear -->
+    <rect x="90" y="210" width="30" height="80" rx="8" fill="#121a14" stroke="#00ff85" stroke-width="3"/>
+    <rect x="100" y="225" width="10" height="50" rx="3" fill="#fff500" filter="url(#glowYellow)"/>
+    
+    <!-- Right Ear -->
+    <rect x="392" y="210" width="30" height="80" rx="8" fill="#121a14" stroke="#00ff85" stroke-width="3"/>
+    <rect x="402" y="225" width="10" height="50" rx="3" fill="#fff500" filter="url(#glowYellow)"/>
+  </g>
+
+  <!-- Main Robot Head Outer Shell -->
+  <g id="head-shell">
+    <rect x="110" y="110" width="292" height="280" rx="48" fill="url(#metalHead)" stroke="#00ff85" stroke-width="4"/>
+
+    <!-- Circuit Trace Lines on Shell -->
+    <path d="M 140,110 L 140,140 L 170,160" stroke="#fff500" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#glowYellow)"/>
+    <circle cx="170" cy="160" r="3" fill="#fff500"/>
+
+    <path d="M 372,110 L 372,140 L 342,160" stroke="#00ff85" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#glowGreen)"/>
+    <circle cx="342" cy="160" r="3" fill="#00ff85"/>
+
+    <path d="M 130,350 L 160,350 L 180,370" stroke="#00ff85" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#glowGreen)"/>
+    <circle cx="180" cy="370" r="3" fill="#00ff85"/>
+
+    <path d="M 382,350 L 352,350 L 332,370" stroke="#fff500" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#glowYellow)"/>
+    <circle cx="332" cy="370" r="3" fill="#fff500"/>
+  </g>
+
+  <!-- LED Face Screen Frame & Display -->
+  <g id="led-screen">
+    <!-- Inner Bezel -->
+    <rect x="136" y="140" width="240" height="220" rx="28" fill="#040a06" stroke="#1b2e21" stroke-width="4"/>
+    
+    <!-- Pixel Grid Background Overlay -->
+    <rect x="142" y="146" width="228" height="208" rx="22" fill="url(#pixelGrid)"/>
+
+    <!-- Screen Bezel Corner Accents -->
+    <path d="M 146,165 L 146,152 L 159,152" stroke="#00ff85" stroke-width="2" fill="none"/>
+    <path d="M 366,165 L 366,152 L 353,152" stroke="#00ff85" stroke-width="2" fill="none"/>
+    <path d="M 146,335 L 146,348 L 159,348" stroke="#00ff85" stroke-width="2" fill="none"/>
+    <path d="M 366,335 L 366,348 L 353,348" stroke="#00ff85" stroke-width="2" fill="none"/>
+
+    <!-- Pixel Art Lightning Bolt Eyes -->
+    <g id="pixel-eyes" fill="#fff500" filter="url(#glowYellow)">
+      <!-- Left Eye (Lightning Bolt) -->
+      <polygon points="205,180 180,215 198,215 185,245 220,205 200,205"/>
+      <!-- Right Eye (Lightning Bolt) -->
+      <polygon points="307,180 282,215 300,215 287,245 322,205 302,205"/>
+    </g>
+
+    <!-- Glowing Pixel Art Smile -->
+    <g id="pixel-smile" fill="#00ff85" filter="url(#glowGreen)">
+      <rect x="182" y="270" width="16" height="12" rx="2"/>
+      <rect x="198" y="282" width="16" height="12" rx="2"/>
+      <rect x="214" y="290" width="84" height="12" rx="2"/>
+      <rect x="298" y="282" width="16" height="12" rx="2"/>
+      <rect x="314" y="270" width="16" height="12" rx="2"/>
+    </g>
+
+    <!-- Screen Glass Glare -->
+    <polygon points="150,150 220,150 170,340 148,340" fill="#ffffff" opacity="0.08"/>
+  </g>
+
+  <!-- Cheek Glow / Status Lights -->
+  <g id="status-lights">
+    <circle cx="165" cy="285" r="6" fill="#00ff85" opacity="0.6" filter="url(#glowGreen)"/>
+    <circle cx="347" cy="285" r="6" fill="#00ff85" opacity="0.6" filter="url(#glowGreen)"/>
+  </g>
+
+  <!-- Ambient Particles -->
+  <g id="particles">
+    <circle cx="80" cy="180" r="2.5" fill="#fff500" filter="url(#glowYellow)"/>
+    <circle cx="430" cy="160" r="2" fill="#00ff85" filter="url(#glowGreen)"/>
+    <circle cx="95" cy="340" r="3" fill="#00ff85" filter="url(#glowGreen)"/>
+    <circle cx="420" cy="360" r="2.5" fill="#fff500" filter="url(#glowYellow)"/>
+  </g>
+</svg>

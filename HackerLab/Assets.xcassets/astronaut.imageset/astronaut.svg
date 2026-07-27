@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Pitch Black Synthwave Background -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#12041c"/>
+      <stop offset="100%" stop-color="#020005"/>
+    </radialGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowMagenta" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Synthwave Gradients -->
+    <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#bf00ff"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8000ff"/>
+      <stop offset="100%" stop-color="#3b0070"/>
+    </linearGradient>
+
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffbe00"/>
+      <stop offset="50%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#8000ff"/>
+    </linearGradient>
+
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#221833"/>
+      <stop offset="100%" stop-color="#0c0714"/>
+    </linearGradient>
+
+    <linearGradient id="visorFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="50%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#bf00ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Background Synthwave Hexagon Badge Ring -->
+  <g stroke="url(#magentaGrad)" stroke-width="2.5" fill="none">
+    <polygon points="256,30 440,136 440,348 256,454 72,348 72,136" stroke-dasharray="8,6" filter="url(#glowMagenta)"/>
+    <circle cx="256" cy="242" r="210" stroke="#8000ff" stroke-opacity="0.25"/>
+    <path d="M 72,136 L 120,163 M 440,136 L 392,163 M 256,454 L 256,480" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="120" cy="163" r="3" fill="#00f0ff" filter="url(#glowCyan)"/>
+    <circle cx="392" cy="163" r="3" fill="#ff007f" filter="url(#glowMagenta)"/>
+  </g>
+
+  <!-- Astronaut Spacesuit Shoulders & Neck -->
+  <g id="spacesuit">
+    <!-- Outer Neck Base -->
+    <path d="M 150,470 C 150,380 180,310 256,310 C 332,310 362,380 362,470 Z" fill="url(#suitGrad)" stroke="#3b2057" stroke-width="3"/>
+    
+    <!-- Collar Ring Rings -->
+    <path d="M 170,360 Q 256,380 342,360" fill="none" stroke="#ff007f" stroke-width="4" filter="url(#glowMagenta)"/>
+    <path d="M 185,385 Q 256,405 327,385" fill="none" stroke="#00f0ff" stroke-width="3" filter="url(#glowCyan)"/>
+
+    <!-- Suit Tech Details / Chest Badge -->
+    <rect x="226" y="410" width="60" height="35" rx="6" fill="#10081c" stroke="#bf00ff" stroke-width="2"/>
+    <circle cx="246" cy="427" r="6" fill="#ff007f" filter="url(#glowMagenta)"/>
+    <circle cx="266" cy="427" r="6" fill="#00f0ff" filter="url(#glowCyan)"/>
+  </g>
+
+  <!-- Helmet Outer Shell -->
+  <g id="helmet-shell">
+    <circle cx="256" cy="220" r="125" fill="url(#suitGrad)" stroke="#ff007f" stroke-width="3.5" filter="url(#glowMagenta)"/>
+    
+    <!-- Helmet Side Audio/Oxygen Hubs -->
+    <rect x="118" y="195" width="22" height="50" rx="8" fill="#10081c" stroke="#00f0ff" stroke-width="2.5" filter="url(#glowCyan)"/>
+    <rect x="372" y="195" width="22" height="50" rx="8" fill="#10081c" stroke="#00f0ff" stroke-width="2.5" filter="url(#glowCyan)"/>
+  </g>
+
+  <!-- Reflective Visor & Neon Cityscape Reflection -->
+  <g id="reflective-visor">
+    <!-- Visor Frame Outer Border -->
+    <path d="M 150,210 C 150,135 200,125 256,125 C 312,125 362,135 362,210 C 362,285 312,295 256,295 C 200,295 150,285 150,210 Z" fill="#05010a" stroke="url(#visorFrame)" stroke-width="4" filter="url(#glowMagenta)"/>
+
+    <!-- Clip Path for Visor Reflection Contents -->
+    <clipPath id="visorClip">
+      <path d="M 154,210 C 154,140 202,131 256,131 C 310,131 358,140 358,210 C 358,280 310,289 256,289 C 202,289 154,280 154,210 Z"/>
+    </clipPath>
+
+    <!-- Contents Inside Visor (The Synthwave Reflection) -->
+    <g clip-path="url(#visorClip)">
+      <!-- Visor Background Sky -->
+      <rect x="140" y="120" width="232" height="180" fill="#0d021a"/>
+
+      <!-- Synthwave Retro Sun Reflection -->
+      <circle cx="256" cy="195" r="55" fill="url(#sunGrad)"/>
+      <!-- Sun Cuts / Grid Stripes -->
+      <rect x="190" y="195" width="132" height="3" fill="#0d021a"/>
+      <rect x="190" y="203" width="132" height="4" fill="#0d021a"/>
+      <rect x="190" y="213" width="132" height="5" fill="#0d021a"/>
+      <rect x="190" y="225" width="132" height="6" fill="#0d021a"/>
+
+      <!-- Perspective Perspective Grid (Floor/Road Reflection) -->
+      <g stroke="#ff007f" stroke-width="1.5" opacity="0.85">
+        <!-- Horizon Line -->
+        <line x1="140" y1="230" x2="372" y2="230" stroke="#00f0ff" stroke-width="2"/>
+        <!-- Vanishing Grid Lines -->
+        <line x1="256" y1="230" x2="256" y2="300"/>
+        <line x1="256" y1="230" x2="210" y2="300"/>
+        <line x1="256" y1="230" x2="160" y2="300"/>
+        <line x1="256" y1="230" x2="302" y2="300"/>
+        <line x1="256" y1="230" x2="352" y2="300"/>
+        <!-- Horizontal Grid Lines -->
+        <line x1="140" y1="240" x2="372" y2="240"/>
+        <line x1="140" y1="252" x2="372" y2="252"/>
+        <line x1="140" y1="267" x2="372" y2="267"/>
+        <line x1="140" y1="285" x2="372" y2="285"/>
+      </g>
+
+      <!-- Neon City Skyline Silhouette Reflection -->
+      <g fill="#07010f" stroke="#00f0ff" stroke-width="1" opacity="0.9">
+        <!-- Buildings -->
+        <rect x="165" y="190" width="18" height="40"/>
+        <polygon points="174,175 165,190 183,190"/>
+        <rect x="187" y="200" width="14" height="30"/>
+        <rect x="205" y="180" width="22" height="50"/>
+        <rect x="231" y="210" width="12" height="20"/>
+        <rect x="270" y="185" width="20" height="45"/>
+        <polygon points="280,170 270,185 290,185"/>
+        <rect x="294" y="205" width="16" height="25"/>
+        <rect x="314" y="195" width="24" height="35"/>
+      </g>
+
+      <!-- Visor Curve Specular Glare / Highlight -->
+      <path d="M 170,145 Q 256,133 342,145 Q 256,155 170,145 Z" fill="#ffffff" opacity="0.35"/>
+      <path d="M 160,200 Q 155,240 170,270 Q 162,240 160,200 Z" fill="#ffffff" opacity="0.2"/>
+    </g>
+  </g>
+
+  <!-- Floating Particles & Stars -->
+  <g id="particles" opacity="0.8">
+    <circle cx="100" cy="100" r="2" fill="#00f0ff" filter="url(#glowCyan)"/>
+    <circle cx="410" cy="110" r="2.5" fill="#ff007f" filter="url(#glowMagenta)"/>
+    <circle cx="80" cy="300" r="2" fill="#ff007f" filter="url(#glowMagenta)"/>
+    <circle cx="430" cy="320" r="3" fill="#00f0ff" filter="url(#glowCyan)"/>
+    <circle cx="256" cy="70" r="2" fill="#ffffff"/>
+  </g>
+</svg>

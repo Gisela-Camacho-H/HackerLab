@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#060c14"/>
+      <stop offset="100%" stop-color="#000205"/>
+    </radialGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- LED Arcade Pixel Grid Pattern -->
+    <pattern id="pixelGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="15" height="15" fill="none" stroke="#00dfff" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Dark Pitch Black Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+  <rect width="512" height="512" fill="url(#pixelGrid)"/>
+
+  <!-- Retro Arcade Border Frame -->
+  <g stroke="#00ff85" stroke-width="2" fill="none" opacity="0.25">
+    <rect x="24" y="24" width="464" height="464" rx="32" stroke-dasharray="12,8"/>
+    <circle cx="24" cy="24" r="6" fill="#00ff85"/>
+    <circle cx="488" cy="24" r="6" fill="#00dfff"/>
+    <circle cx="24" cy="488" r="6" fill="#00dfff"/>
+    <circle cx="488" cy="488" r="6" fill="#00ff85"/>
+  </g>
+
+  <!-- PIXEL DRAGON HEAD STRUCTURE (Rendered using sharp pixel blocks) -->
+  <g id="dragon-head">
+    <!-- Horns (Top Back) -->
+    <!-- Left Horn -->
+    <g fill="#00dfff" filter="url(#glowBlue)">
+      <rect x="144" y="80" width="16" height="16"/>
+      <rect x="128" y="96" width="32" height="16"/>
+      <rect x="144" y="112" width="32" height="16"/>
+      <rect x="160" y="128" width="32" height="16"/>
+      <rect x="176" y="144" width="32" height="16"/>
+    </g>
+    <!-- Right Horn -->
+    <g fill="#00ff85" filter="url(#glowGreen)">
+      <rect x="352" y="80" width="16" height="16"/>
+      <rect x="352" y="96" width="32" height="16"/>
+      <rect x="336" y="112" width="32" height="16"/>
+      <rect x="320" y="128" width="32" height="16"/>
+      <rect x="304" y="144" width="32" height="16"/>
+    </g>
+
+    <!-- Dark Dragon Skull / Base Scales -->
+    <g fill="#0a1813" stroke="#173328" stroke-width="2">
+      <!-- Main Cranium Block -->
+      <rect x="176" y="144" width="160" height="112"/>
+      <rect x="160" y="160" width="192" height="80"/>
+      <!-- Snout Upper -->
+      <rect x="192" y="256" width="128" height="64"/>
+      <!-- Neck Base -->
+      <rect x="208" y="352" width="96" height="80"/>
+    </g>
+
+    <!-- Neon Scale Accents & Facial Angles -->
+    <g fill="#00a857">
+      <rect x="240" y="144" width="32" height="16"/>
+      <rect x="224" y="160" width="64" height="16"/>
+      <rect x="176" y="208" width="16" height="32"/>
+      <rect x="320" y="208" width="16" height="32"/>
+      <rect x="208" y="272" width="96" height="16"/>
+    </g>
+
+    <!-- Glowing Pixel Eyes -->
+    <!-- Left Eye (Cyan) -->
+    <g fill="#00dfff" filter="url(#glowBlue)">
+      <rect x="192" y="192" width="32" height="16"/>
+      <rect x="208" y="208" width="16" height="16"/>
+    </g>
+    <rect x="208" y="192" width="16" height="16" fill="#ffffff"/>
+
+    <!-- Right Eye (Neon Green) -->
+    <g fill="#00ff85" filter="url(#glowGreen)">
+      <rect x="288" y="192" width="32" height="16"/>
+      <rect x="288" y="208" width="16" height="16"/>
+    </g>
+    <rect x="288" y="192" width="16" height="16" fill="#ffffff"/>
+
+    <!-- Snout Nostrils & Fangs -->
+    <!-- Nostrils -->
+    <rect x="224" y="288" width="16" height="16" fill="#020805"/>
+    <rect x="272" y="288" width="16" height="16" fill="#020805"/>
+
+    <!-- Fangs (Upper Jaw) -->
+    <g fill="#ffffff">
+      <polygon points="208,320 224,320 216,344"/>
+      <polygon points="288,320 304,320 296,344"/>
+    </g>
+  </g>
+
+  <!-- DIGITAL NEON FLAMES (BREATHING DOWN & OUTWARD) -->
+  <g id="digital-flames">
+    <!-- Green Flame Layer (Core Left & Center) -->
+    <g fill="#00ff85" filter="url(#glowGreen)">
+      <!-- Central Stream -->
+      <rect x="240" y="336" width="32" height="32"/>
+      <rect x="224" y="368" width="64" height="32"/>
+      <rect x="208" y="400" width="96" height="32"/>
+      <rect x="192" y="432" width="128" height="32"/>
+      <rect x="176" y="464" width="160" height="16"/>
+
+      <!-- Flame Sparks / Pixel Drops -->
+      <rect x="160" y="384" width="16" height="16"/>
+      <rect x="144" y="416" width="16" height="16"/>
+      <rect x="128" y="448" width="16" height="16"/>
+      <rect x="352" y="416" width="16" height="16"/>
+    </g>
+
+    <!-- Cyan/Blue Flame Layer (Core Right & Inner Fire) -->
+    <g fill="#00dfff" filter="url(#glowBlue)">
+      <rect x="240" y="352" width="32" height="32"/>
+      <rect x="224" y="384" width="48" height="32"/>
+      <rect x="240" y="416" width="48" height="32"/>
+      <rect x="224" y="448" width="64" height="24"/>
+
+      <!-- Blue Sparks -->
+      <rect x="336" y="384" width="16" height="16"/>
+      <rect x="368" y="448" width="16" height="16"/>
+      <rect x="160" y="448" width="16" height="16"/>
+    </g>
+
+    <!-- White Hot Flame Center -->
+    <g fill="#ffffff">
+      <rect x="248" y="344" width="16" height="24"/>
+      <rect x="240" y="368" width="24" height="24"/>
+      <rect x="248" y="392" width="16" height="16"/>
+    </g>
+  </g>
+
+  <!-- Floating Digital Pixel Particles -->
+  <g id="pixel-particles">
+    <rect x="96" y="160" width="8" height="8" fill="#00dfff" filter="url(#glowBlue)"/>
+    <rect x="408" y="176" width="8" height="8" fill="#00ff85" filter="url(#glowGreen)"/>
+    <rect x="80" y="320" width="12" height="12" fill="#00ff85" filter="url(#glowGreen)"/>
+    <rect x="424" y="300" width="12" height="12" fill="#00dfff" filter="url(#glowBlue)"/>
+    <rect x="112" y="240" width="8" height="8" fill="#ffffff"/>
+    <rect x="392" y="240" width="8" height="8" fill="#ffffff"/>
+  </g>
+</svg>

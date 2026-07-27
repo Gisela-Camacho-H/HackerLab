@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#090312"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Neon Gradients -->
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf00ff"/>
+      <stop offset="100%" stop-color="#7000ff"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff85"/>
+      <stop offset="100%" stop-color="#00a355"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Solid Dark Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Background Geometric Frame & Cyber Grid -->
+  <g stroke="#bf00ff" stroke-opacity="0.15" stroke-width="2" fill="none">
+    <polygon points="256,40 430,140 430,372 256,472 82,372 82,140" stroke-dasharray="6,6"/>
+    <circle cx="256" cy="256" r="200" stroke="#00ff85" stroke-opacity="0.1"/>
+    <!-- Cyber lines -->
+    <path d="M 50,256 L 100,256 M 412,256 L 462,256 M 256,50 L 256,100 M 256,412 L 256,462"/>
+    <circle cx="100" cy="256" r="3" fill="#00ff85"/>
+    <circle cx="412" cy="256" r="3" fill="#bf00ff"/>
+  </g>
+
+  <!-- GLITCH OFFSET SHADOW 1: GREEN (Shifted Left/Up) -->
+  <g transform="translate(-8, -5)" opacity="0.7" fill="none" stroke="#00ff85" stroke-width="3" filter="url(#glowGreen)">
+    <!-- Skull Cranium -->
+    <polygon points="256,110 330,135 370,210 340,300 300,320 280,410 232,410 212,320 172,300 142,210 182,135"/>
+    <!-- Left Eye -->
+    <polygon points="190,205 235,220 220,265 180,250"/>
+    <!-- Right Eye -->
+    <polygon points="322,205 277,220 292,265 332,250"/>
+    <!-- Nose -->
+    <polygon points="256,270 242,295 270,295"/>
+  </g>
+
+  <!-- GLITCH OFFSET SHADOW 2: PURPLE (Shifted Right/Down) -->
+  <g transform="translate(8, 5)" opacity="0.75" fill="none" stroke="#bf00ff" stroke-width="3" filter="url(#glowPurple)">
+    <!-- Skull Cranium -->
+    <polygon points="256,110 330,135 370,210 340,300 300,320 280,410 232,410 212,320 172,300 142,210 182,135"/>
+    <!-- Left Eye -->
+    <polygon points="190,205 235,220 220,265 180,250"/>
+    <!-- Right Eye -->
+    <polygon points="322,205 277,220 292,265 332,250"/>
+    <!-- Nose -->
+    <polygon points="256,270 242,295 270,295"/>
+  </g>
+
+  <!-- MAIN MAIN GEOMETRIC SKULL (CENTERED) -->
+  <g id="main-skull">
+    <!-- Dark Base Structure -->
+    <polygon points="256,110 330,135 370,210 340,300 300,320 280,410 232,410 212,320 172,300 142,210 182,135" fill="#0d0817" stroke="#1f1433" stroke-width="4"/>
+
+    <!-- Geometric Facet Lines (Low Poly Cyberpunk Style) -->
+    <g stroke="#2d1c4a" stroke-width="2" fill="none">
+      <line x1="256" y1="110" x2="256" y2="270"/>
+      <line x1="256" y1="110" x2="212" y2="180"/>
+      <line x1="256" y1="110" x2="300" y2="180"/>
+      <line x1="182" y1="135" x2="212" y2="180"/>
+      <line x1="330" y1="135" x2="300" y2="180"/>
+      <line x1="142" y1="210" x2="212" y2="180"/>
+      <line x1="370" y1="210" x2="300" y2="180"/>
+      <line x1="172" y1="300" x2="256" y2="270"/>
+      <line x1="340" y1="300" x2="256" y2="270"/>
+    </g>
+
+    <!-- Glowing Geometric Eyes -->
+    <!-- Left Eye Socket -->
+    <polygon points="190,205 235,220 220,265 180,250" fill="#05020a" stroke="#00ff85" stroke-width="3" filter="url(#glowGreen)"/>
+    <polygon points="198,215 227,225 217,255 188,245" fill="url(#greenGrad)"/>
+
+    <!-- Right Eye Socket -->
+    <polygon points="322,205 277,220 292,265 332,250" fill="#05020a" stroke="#bf00ff" stroke-width="3" filter="url(#glowPurple)"/>
+    <polygon points="314,215 285,225 295,255 324,245" fill="url(#purpleGrad)"/>
+
+    <!-- Geometric Nose Socket -->
+    <polygon points="256,270 242,298 270,298" fill="#00ff85" filter="url(#glowGreen)"/>
+
+    <!-- Cyber Teeth / Jaw Structure -->
+    <g stroke="#00ff85" stroke-width="2.5" fill="#080312" filter="url(#glowGreen)">
+      <!-- Jaw Outline -->
+      <polygon points="212,320 300,320 280,410 232,410"/>
+      <!-- Vertical Tooth Separators -->
+      <line x1="236" y1="320" x2="240" y2="410"/>
+      <line x1="248" y1="320" x2="250" y2="410"/>
+      <line x1="264" y1="320" x2="262" y2="410"/>
+      <line x1="276" y1="320" x2="272" y2="410"/>
+      <!-- Horizontal Bite Line -->
+      <line x1="218" y1="365" x2="294" y2="365" stroke="#bf00ff" stroke-width="2" filter="url(#glowPurple)"/>
+    </g>
+  </g>
+
+  <!-- GLITCH CUT SLICES (Slices across the image for realistic glitch effect) -->
+  <g id="glitch-slices">
+    <!-- Slice 1: Horizontal Bar Shifted Right (Top Skull) -->
+    <g>
+      <rect x="120" y="150" width="280" height="12" fill="#bf00ff" opacity="0.8" filter="url(#glowPurple)"/>
+      <rect x="135" y="152" width="250" height="8" fill="#00ff85" opacity="0.9" filter="url(#glowGreen)"/>
+    </g>
+
+    <!-- Slice 2: Horizontal Bar Shifted Left (Eye level) -->
+    <g>
+      <rect x="90" y="235" width="160" height="8" fill="#00ff85" opacity="0.85" filter="url(#glowGreen)"/>
+      <rect x="290" y="240" width="140" height="6" fill="#bf00ff" opacity="0.85" filter="url(#glowPurple)"/>
+    </g>
+
+    <!-- Slice 3: Jaw Glitch Block -->
+    <g>
+      <rect x="190" y="340" width="150" height="10" fill="#00ff85" opacity="0.6"/>
+      <rect x="170" y="375" width="180" height="6" fill="#bf00ff" opacity="0.7" filter="url(#glowPurple)"/>
+    </g>
+
+    <!-- Random Floating Digital Glitch Blocks/Pixels -->
+    <rect x="110" y="180" width="18" height="6" fill="#00ff85"/>
+    <rect x="380" y="190" width="24" height="4" fill="#bf00ff"/>
+    <rect x="130" y="290" width="12" height="12" fill="#bf00ff"/>
+    <rect x="370" y="310" width="15" height="5" fill="#00ff85"/>
+    <rect x="220" y="430" width="30" height="4" fill="#00ff85" filter="url(#glowGreen)"/>
+    <rect x="260" y="440" width="20" height="6" fill="#bf00ff" filter="url(#glowPurple)"/>
+  </g>
+
+  <!-- Digital Noise Particles -->
+  <g id="particles" opacity="0.8">
+    <circle cx="90" cy="120" r="2" fill="#00ff85" filter="url(#glowGreen)"/>
+    <circle cx="420" cy="130" r="2.5" fill="#bf00ff" filter="url(#glowPurple)"/>
+    <circle cx="70" cy="330" r="2" fill="#bf00ff" filter="url(#glowPurple)"/>
+    <circle cx="440" cy="350" r="3" fill="#00ff85" filter="url(#glowGreen)"/>
+  </g>
+</svg>
