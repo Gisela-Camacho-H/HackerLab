@@ -7,18 +7,24 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AgentContentView: View {
+    @State private var currentStep: Int = 1
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        ZStack {
+            Color.darkGreenBackground
+                .ignoresSafeArea(.all)
 
-#Preview {
-    ContentView()
+            VStack {
+                ForEach(0..<10) { _ in
+                    Divider().background(Color.hackerBlue.opacity(0.1))
+                    Spacer()
+                }
+            }
+            .allowsHitTesting(false)
+            .ignoresSafeArea(.all)
+            
+        }
+        .preferredColorScheme(.dark)
+    }
 }

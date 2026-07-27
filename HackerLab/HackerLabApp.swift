@@ -11,7 +11,7 @@ import SwiftUI
 struct HackerLabApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AgentContentView()
         }
     }
 }
