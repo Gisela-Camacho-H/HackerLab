@@ -61,9 +61,11 @@ struct LoginTerminalView: View {
                     
                     SecureField("", text: $inputKey)
                             .font(.system(.body, design: .monospaced))
-                            .tracking(8) // <-- Esto separa visualmente los puntos/asteriscos nativos sin alterar el texto
+                            .tracking(8)
                             .foregroundColor(.white)
-                            .padding()
+                            .accentColor(.green)
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 20)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
                             .onChange(of: inputKey) { _ in
